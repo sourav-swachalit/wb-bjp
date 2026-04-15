@@ -41,8 +41,8 @@ export default function HomePage() {
     <div className="bg-gray-100 min-h-screen">
       {/* HEADER */}
       <header className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex items-center gap-4">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-4 text-center sm:text-left">
             <Image
               src="/image7.png"
               alt="BJP Logo"
@@ -60,8 +60,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 text-sm text-slate-600 lg:items-end">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col gap-3 text-sm text-slate-600 items-center lg:items-end">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
               <span>For Any Suggestion or Queries Call:</span>
               <span className="font-semibold text-orange-600">
                 +91 98312 28624
@@ -71,7 +71,7 @@ export default function HomePage() {
                 +91 98312 28624
               </span>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <span>Follow us:</span>
 
               <div className="flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function HomePage() {
         </div>
 
         <nav className="bg-slate-900 text-white">
-          <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-center gap-6 text-sm uppercase tracking-[0.16em]">
+          <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm uppercase tracking-[0.16em]">
             <span className="cursor-pointer hover:text-orange-400">Home</span>
             <span className="cursor-pointer hover:text-orange-400">
               Organisation
@@ -133,8 +133,8 @@ export default function HomePage() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="max-w-7xl mx-auto px-4 mt-6 grid grid-cols-3 gap-4">
-        <div className="col-span-2 rounded-lg overflow-hidden">
+      <section className="max-w-7xl mx-auto px-4 mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="lg:col-span-2 rounded-lg overflow-hidden">
           <Carousel
             opts={{ loop: true }}
             plugins={[
@@ -142,12 +142,12 @@ export default function HomePage() {
                 delay: 3000,
               }),
             ]}
-            className="w-full"
+            className="w-full h-full"
           >
-            <CarouselContent>
+            <CarouselContent className="h-full">
               {images.map((src, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative h-100 w-full">
+                <CarouselItem key={index} className="h-full">
+                  <div className="relative h-52.5 sm:h-67.5 md:h-100 w-full">
                     <Image
                       src={src}
                       alt={`slide-${index}`}
@@ -213,13 +213,13 @@ export default function HomePage() {
 
       {/* ANNOUNCEMENT BAR */}
       <div className="max-w-7xl mx-auto px-4 mt-6">
-        <div className="bg-black text-white px-4 py-2 rounded-md">
+        <div className="bg-black text-white px-4 py-2 rounded-md text-center sm:text-left">
           Announcements
         </div>
       </div>
 
       {/* CONTENT SECTION */}
-      <section className="max-w-7xl mx-auto px-4 mt-6 grid grid-cols-3 gap-6">
+      <section className="max-w-7xl mx-auto px-4 mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* LEFT COLUMN */}
         <div className="flex flex-col gap-4">
           {/* GUIDING LIGHTS */}
@@ -229,22 +229,22 @@ export default function HomePage() {
                 🌼 OUR GUIDING LIGHTS
               </h3>
 
-              <div className="flex justify-around">
+              <div className="flex flex-wrap justify-around gap-2">
                 {leaders.map((leader, i) => (
-                  <div key={i} className="flex flex-col items-center w-15">
+                  <div key={i} className="flex flex-col items-center w-[60px] sm:w-[70px]">
                     {/* IMAGE */}
-                    <div className="relative w-18 h-15 mb-1 overflow-hidden rounded border bg-gray-100">
+                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 mb-1 overflow-hidden rounded border bg-gray-100">
                       <Image
                         src={leader.img}
                         alt={leader.name}
                         fill
-                        sizes="52px"
+                        sizes="64px"
                         className="object-cover grayscale hover:grayscale-0 transition duration-300"
                       />
                     </div>
 
                     {/* NAME */}
-                    <p className="text-[10px] leading-tight text-center text-gray-700">
+                    <p className="text-[10px] sm:text-xs leading-tight text-center text-gray-700">
                       {leader.name}
                     </p>
                   </div>
@@ -274,7 +274,7 @@ export default function HomePage() {
           ].map((leader, i) => (
             <div
               key={i}
-              className="relative h-[140px] rounded-md overflow-hidden"
+              className="relative h-[140px] sm:h-[160px] rounded-md overflow-hidden"
             >
               <Image
                 src={leader.image}
@@ -296,29 +296,29 @@ export default function HomePage() {
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="flex gap-3 mb-3 items-start">
                   {/* IMAGE */}
-                  <div className="relative w-12 h-12 rounded overflow-hidden flex-shrink-0">
+                  <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded overflow-hidden flex-shrink-0">
                     <Image
                       src={`/image15.png`} // 👈 your images
                       alt="news"
                       fill
-                      sizes="48px"
+                      sizes="64px"
                       className="object-cover"
                     />
                   </div>
 
                   {/* TEXT */}
-                  <div>
+                  <div className="flex-1">
                     <p className="text-sm font-medium leading-tight">
                       Schedule of Dr. Sukanta Majumdar...
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500 mt-1">
                       Posted on: 27 Aug 2022
                     </p>
                   </div>
                 </div>
               ))}
 
-              <Button size="sm" className="mt-2">
+              <Button size="sm" className="mt-2 w-full sm:w-auto">
                 View All Articles
               </Button>
             </CardContent>
@@ -333,21 +333,21 @@ export default function HomePage() {
 
               {[1, 2, 3].map((i) => (
                 <div key={i} className="flex gap-3 mb-3">
-                  <div className="w-10 h-10 bg-orange-400 rounded flex items-center justify-center text-white">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-400 rounded flex items-center justify-center text-white flex-shrink-0">
                     🌼
                   </div>
                   <div>
                     <p className="text-sm font-medium">
                       Schedule of Samik Bhattacharya
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-gray-500 mt-1">
                       Posted on: 10 Jan 2026
                     </p>
                   </div>
                 </div>
               ))}
 
-              <Button size="sm" className="mt-2">
+              <Button size="sm" className="mt-2 w-full sm:w-auto">
                 View All Articles
               </Button>
             </CardContent>
@@ -355,13 +355,13 @@ export default function HomePage() {
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:col-span-2 lg:col-span-1">
           {/* SOCIAL STREAM */}
           <Card>
             <CardContent className="p-4">
               <h3 className="font-semibold text-sm mb-3">📱 SOCIAL STREAM</h3>
 
-              <div className="h-[250px] bg-gray-200 rounded flex items-center justify-center">
+              <div className="h-[250px] bg-gray-200 rounded flex items-center justify-center text-gray-500">
                 Facebook Embed
               </div>
             </CardContent>
@@ -372,7 +372,7 @@ export default function HomePage() {
             <CardContent className="p-4">
               <h3 className="font-semibold text-sm mb-3">🎥 LATEST VIDEO</h3>
 
-              <div className="relative h-[180px] rounded overflow-hidden">
+              <div className="relative h-[180px] sm:h-[220px] rounded overflow-hidden">
                 <Image
                   src="/image5.png"
                   alt="video"
@@ -381,7 +381,7 @@ export default function HomePage() {
                 />
 
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-orange-500 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl">
+                  <div className="bg-orange-500 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl hover:scale-110 transition cursor-pointer shadow-lg">
                     ▶
                   </div>
                 </div>
@@ -395,12 +395,12 @@ export default function HomePage() {
       <footer className="bg-gray-200 mt-10 relative overflow-hidden">
         {/* Background watermark (lotus style placeholder) */}
         <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-          <div className="text-[200px] text-gray-400">🌼</div>
+          <div className="text-[150px] sm:text-[200px] text-gray-400">🌼</div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-10 flex justify-around items-center relative z-10 text-sm text-gray-700">
+        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-8 justify-around items-center md:items-start relative z-10 text-sm text-gray-700">
           {/* CONTACT */}
-          <div>
+          <div className="text-center md:text-left max-w-sm">
             <h3 className="font-semibold text-gray-800 mb-3 uppercase tracking-wide">
               CONTACT INFORMATION
             </h3>
@@ -414,15 +414,6 @@ export default function HomePage() {
               <p>
                 <span className="font-semibold">Phone :</span> +91 98312 28624
               </p>
-              {/* <p>
-                <span className="font-semibold">Fax :</span> (033) xxxx-xxxx
-              </p>
-
-              <p className="flex items-center gap-2">
-                <span className="text-green-600">🟢</span>
-                +91 xxxxxxxxxx
-              </p> */}
-
               <p>
                 <span className="font-semibold">Office Email :</span>{" "}
                 hello@bjpchanditala.com
@@ -435,14 +426,14 @@ export default function HomePage() {
           </div>
 
           {/* SOCIAL */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="font-semibold text-gray-800 mb-3 uppercase tracking-wide">
               JOIN THE CONVERSATION
             </h3>
 
             <p className="text-xs mb-3">Follow / Like us :</p>
 
-            <div className="flex gap-2 mb-4 justify-center">
+            <div className="flex gap-2 mb-4 justify-center md:justify-start">
               {/* Facebook */}
               <Link
                 href="https://www.facebook.com/debasish.mukherjee.7773/"
@@ -470,15 +461,6 @@ export default function HomePage() {
                 <FaYoutube size={14} />
               </Link>
 
-              {/* Google */}
-              {/* <Link
-                href="https://google.com"
-                target="_blank"
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#DB4437] hover:text-white transition"
-              >
-                <FaGoogle size={14} />
-              </Link> */}
-
               {/* Instagram */}
               <Link
                 href="https://www.instagram.com/debasishvc/"
@@ -489,12 +471,14 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <p className="text-xs text-gray-600 text-center">
-              © Copyright 2020 - BJP Bengal
+            <p className="text-xs text-gray-600">
+              © Copyright 2026 - BJP Bengal
             </p>
           </div>
         </div>
       </footer>
+      
+      {/* FLOATING ACTION BUTTON */}
       <Link
         href="https://www.facebook.com/debasish.mukherjee.7773/"
         target="_blank"
