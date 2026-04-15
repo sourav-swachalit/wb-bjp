@@ -418,10 +418,10 @@ export default function HomePage() {
                 <span className="font-semibold">Office Email :</span>{" "}
                 hello@bjpchanditala.com
               </p>
-              <p>
+              {/* <p>
                 <span className="font-semibold">Election Office Email :</span>{" "}
                 xxxxxx@bjpwb.org
-              </p>
+              </p> */}
             </div>
           </div>
 
