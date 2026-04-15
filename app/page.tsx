@@ -9,6 +9,15 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaYoutube,
+  FaGoogle,
+  FaInstagram,
+} from "react-icons/fa";
+import { Phone } from "lucide-react";
 
 export default function HomePage() {
   const images = [
@@ -50,40 +59,43 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col gap-3 text-sm text-slate-600 lg:items-end">
-            <div className="">
+            <div className="flex items-center gap-4">
               <span>For Any Suggestion or Queries Call:</span>
               <span className="font-semibold text-orange-600">
-                (033) 2241-7086
+                (xxx) xxxx-xxxx
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1 text-green-700">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-4 w-4"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path d="M17.5 6.5c-1.3-1.3-3.4-1.4-4.9-.3-.4.3-1 .3-1.4 0l-.9-.9c-.3-.3-.8-.3-1.1 0L7.4 6.5c-.3.3-.3.8 0 1.1l1.1 1.1c.3.3.3.8 0 1.1l-.5.6c-.2.5-.4 1-.6 1.5-.1.4 0 .8.3 1.1l2.2 2.2c.3.3.7.4 1.1.3.5-.2 1-.4 1.5-.6l.6-.5c.3-.3.8-.3 1.1 0l1.1 1.1c.3.3.8.3 1.1 0l2.6-2.6c.3-.3.3-.8 0-1.1l-.9-.9c-.3-.3-.8-.3-1.1 0l-1.1 1.1c-.3.3-.8.3-1.1 0l-.5-.5c-.3-.3-.3-.8 0-1.1l.6-.6c.3-.3.3-.8 0-1.1-.1-.2-.3-.4-.5-.5z" />
-                </svg>
-                +91 6289902136
+                <Phone className="h-4 w-4" />
+                +91 xxxxxxxxxx
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <span>Follow us:</span>
+
               <div className="flex items-center gap-2">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700">
-                  f
+                {/* Facebook */}
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#1877F2] hover:text-white cursor-pointer transition">
+                  <FaFacebookF size={14} />
                 </span>
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700">
-                  t
+
+                {/* Twitter */}
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#1DA1F2] hover:text-white cursor-pointer transition">
+                  <FaTwitter size={14} />
                 </span>
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700">
-                  y
+
+                {/* YouTube */}
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#FF0000] hover:text-white cursor-pointer transition">
+                  <FaYoutube size={14} />
                 </span>
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700">
-                  g
+
+                {/* Google */}
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#DB4437] hover:text-white cursor-pointer transition">
+                  <FaGoogle size={14} />
                 </span>
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700">
-                  i
+
+                {/* Instagram */}
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500 hover:text-white cursor-pointer transition">
+                  <FaInstagram size={14} />
                 </span>
               </div>
             </div>
@@ -155,9 +167,7 @@ export default function HomePage() {
           <Card className="bg-sky-500 text-white">
             <CardContent className="p-2">
               <p className="text-2xl font-bold font-sans">Twitter</p>
-              <Button className="mt-2 bg-white text-sky-500">
-                Contact Us
-              </Button>
+              <Button className="mt-2 bg-white text-sky-500">Contact Us</Button>
             </CardContent>
           </Card>
         </div>
@@ -350,44 +360,7 @@ export default function HomePage() {
           <div className="text-[200px] text-gray-400">🌼</div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-4 gap-10 relative z-10 text-sm text-gray-700">
-          {/* THE PARTY */}
-          <div>
-            <h3 className="font-semibold text-gray-800 mb-3 uppercase tracking-wide">
-              THE PARTY
-            </h3>
-            <ul className="space-y-2">
-              <li className="hover:text-orange-600 cursor-pointer">
-                About the Party
-              </li>
-              <li className="hover:text-orange-600 cursor-pointer">
-                Our Foundation
-              </li>
-              <li className="hover:text-orange-600 cursor-pointer">
-                Our Agenda
-              </li>
-            </ul>
-          </div>
-
-          {/* GET INVOLVED */}
-          <div>
-            <h3 className="font-semibold text-gray-800 mb-3 uppercase tracking-wide">
-              GET INVOLVED
-            </h3>
-            <ul className="space-y-2">
-              <li className="hover:text-orange-600 cursor-pointer">
-                Join the Party
-              </li>
-              <li className="hover:text-orange-600 cursor-pointer">
-                Make a Donation
-              </li>
-              <li className="hover:text-orange-600 cursor-pointer">BJP Live</li>
-              <li className="hover:text-orange-600 cursor-pointer">
-                e-Library
-              </li>
-            </ul>
-          </div>
-
+        <div className="max-w-7xl mx-auto px-6 py-10 flex justify-around items-center relative z-10 text-sm text-gray-700">
           {/* CONTACT */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-3 uppercase tracking-wide">
@@ -396,57 +369,103 @@ export default function HomePage() {
 
             <div className="space-y-2 text-xs">
               <p>
-                <span className="font-semibold">Address :</span> 6, Muralidhar
-                Sen Lane, Kolkata-700073
+                <span className="font-semibold">Address :</span> x, xxxxxxxxx
+                xxx xxxx, Kolkata-700073
               </p>
               <p>
-                <span className="font-semibold">Phone :</span> (033) 2241-7086
+                <span className="font-semibold">Phone :</span> (xxx) xxxx-xxxx
               </p>
               <p>
-                <span className="font-semibold">Fax :</span> (033) 2241-7460
+                <span className="font-semibold">Fax :</span> (033) xxxx-xxxx
               </p>
 
               <p className="flex items-center gap-2">
                 <span className="text-green-600">🟢</span>
-                +91 6289902136
+                +91 xxxxxxxxxx
               </p>
 
               <p>
                 <span className="font-semibold">Office Email :</span>{" "}
-                wbbjpoffice@gmail.com
+                xxxxxxxx@gmail.com
               </p>
               <p>
                 <span className="font-semibold">Election Office Email :</span>{" "}
-                warroom@bjpwb.org
+                xxxxxx@bjpwb.org
               </p>
             </div>
           </div>
 
           {/* SOCIAL */}
-          <div>
+          <div className="flex flex-col items-center">
             <h3 className="font-semibold text-gray-800 mb-3 uppercase tracking-wide">
               JOIN THE CONVERSATION
             </h3>
 
             <p className="text-xs mb-3">Follow / Like us :</p>
 
-            <div className="flex gap-2 mb-4">
-              {["f", "t", "y", "g", "i"].map((icon, i) => (
-                <div
-                  key={i}
-                  className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-orange-500 hover:text-white cursor-pointer"
-                >
-                  {icon}
-                </div>
-              ))}
+            <div className="flex gap-2 mb-4 justify-center">
+              {/* Facebook */}
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#1877F2] hover:text-white transition"
+              >
+                <FaFacebookF size={14} />
+              </a>
+
+              {/* Twitter */}
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#1DA1F2] hover:text-white transition"
+              >
+                <FaTwitter size={14} />
+              </a>
+
+              {/* YouTube */}
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#FF0000] hover:text-white transition"
+              >
+                <FaYoutube size={14} />
+              </a>
+
+              {/* Google */}
+              <a
+                href="https://google.com"
+                target="_blank"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#DB4437] hover:text-white transition"
+              >
+                <FaGoogle size={14} />
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500 hover:text-white transition"
+              >
+                <FaInstagram size={14} />
+              </a>
             </div>
 
-            <p className="text-xs text-gray-600">
+            <p className="text-xs text-gray-600 text-center">
               © Copyright 2020 - BJP Bengal
             </p>
           </div>
         </div>
       </footer>
+      <Link
+        href="https://facebook.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-50"
+      >
+        <div className="w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center rounded-full shadow-lg transition duration-300">
+          <FaFacebookF size={18} />
+        </div>
+      </Link>
     </div>
   );
 }
