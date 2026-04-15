@@ -16,8 +16,10 @@ import {
   FaYoutube,
   FaGoogle,
   FaInstagram,
+  FaUsers,
 } from "react-icons/fa";
 import { Phone } from "lucide-react";
+import { FaX } from "react-icons/fa6";
 
 export default function HomePage() {
   const images = [
@@ -62,11 +64,11 @@ export default function HomePage() {
             <div className="flex items-center gap-4">
               <span>For Any Suggestion or Queries Call:</span>
               <span className="font-semibold text-orange-600">
-                (xxx) xxxx-xxxx
+                +91 98312 28624
               </span>
               <span className="inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1 text-green-700">
                 <Phone className="h-4 w-4" />
-                +91 xxxxxxxxxx
+                +91 98312 28624
               </span>
             </div>
             <div className="flex flex-wrap items-center gap-3">
@@ -74,29 +76,44 @@ export default function HomePage() {
 
               <div className="flex items-center gap-2">
                 {/* Facebook */}
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#1877F2] hover:text-white cursor-pointer transition">
+                <Link
+                  href="https://www.facebook.com/debasish.mukherjee.7773/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#1877F2] hover:text-white transition"
+                >
                   <FaFacebookF size={14} />
-                </span>
+                </Link>
 
                 {/* Twitter */}
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#1DA1F2] hover:text-white cursor-pointer transition">
-                  <FaTwitter size={14} />
-                </span>
+                <Link
+                  href="https://x.com/debasishvc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-black hover:text-white transition"
+                >
+                  <FaX size={14} />
+                </Link>
 
                 {/* YouTube */}
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#FF0000] hover:text-white cursor-pointer transition">
+                <Link
+                  href="https://www.youtube.com/@debasishmukherjee9365"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#FF0000] hover:text-white transition"
+                >
                   <FaYoutube size={14} />
-                </span>
-
-                {/* Google */}
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-[#DB4437] hover:text-white cursor-pointer transition">
-                  <FaGoogle size={14} />
-                </span>
+                </Link>
 
                 {/* Instagram */}
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500 hover:text-white cursor-pointer transition">
+                <Link
+                  href="https://www.instagram.com/debasishvc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500 hover:text-white transition"
+                >
                   <FaInstagram size={14} />
-                </span>
+                </Link>
               </div>
             </div>
           </div>
@@ -145,29 +162,50 @@ export default function HomePage() {
         </div>
 
         {/* SIDE CARDS */}
-        <div className="flex flex-col gap-5">
-          <Card className="bg-orange-500 text-white">
-            <CardContent className="p-2">
-              <p className="text-2xl font-bold">Join Us</p>
-              <Button className="mt-2 bg-white text-orange-600">
-                Join BJP
-              </Button>
+        <div className="flex flex-col gap-6">
+          {/* JOIN US */}
+          <Card className="bg-orange-500 text-white hover:scale-[1.02] transition duration-300 shadow-md">
+            <CardContent className="p-2 flex items-center justify-between">
+              <div>
+                <p className="text-xl font-bold">Join Us</p>
+                <Button className="mt-2 bg-white text-orange-600 hover:bg-gray-100">
+                  Join BJP
+                </Button>
+              </div>
+
+              <FaUsers size={30} className="opacity-80" />
             </CardContent>
           </Card>
 
-          <Card className="bg-blue-600 text-white">
-            <CardContent className="p-2">
-              <p className="font-bold text-2xl">Facebook</p>
-              <Button className="mt-2 bg-white text-blue-600">
-                Contact Us
-              </Button>
+          {/* FACEBOOK */}
+          <Card className="bg-[#1877F2] text-white hover:scale-[1.02] transition duration-300 shadow-md">
+            <CardContent className="p-2 flex items-center justify-between">
+              <div>
+                <p className="text-xl font-bold">Facebook</p>
+                <Link href="https://www.facebook.com/debasish.mukherjee.7773/" target="_blank" rel="noopener noreferrer">
+                  <Button className="mt-2 bg-white text-black hover:bg-gray-100">
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
+
+              <FaFacebookF size={26} className="opacity-90" />
             </CardContent>
           </Card>
 
-          <Card className="bg-sky-500 text-white">
-            <CardContent className="p-2">
-              <p className="text-2xl font-bold font-sans">Twitter</p>
-              <Button className="mt-2 bg-white text-sky-500">Contact Us</Button>
+          {/* TWITTER */}
+          <Card className="bg-[#1e2022] text-white hover:scale-[1.02] transition duration-300 shadow-md">
+            <CardContent className="p-2 flex items-center justify-between">
+              <div>
+                <p className="text-xl font-bold">X</p>
+                <Link href="https://x.com/debasishvc" target="_blank" rel="noopener noreferrer">
+                  <Button className="mt-2 bg-white text-black hover:bg-gray-100">
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
+
+              <FaTwitter size={26} className="opacity-90" />
             </CardContent>
           </Card>
         </div>
@@ -369,24 +407,25 @@ export default function HomePage() {
 
             <div className="space-y-2 text-xs">
               <p>
-                <span className="font-semibold">Address :</span> x, xxxxxxxxx
-                xxx xxxx, Kolkata-700073
+                <span className="font-semibold">Address :</span> D-49, DANKUNI
+                HOUSING ESTATE, PHASE-2, DANKUNI, HOOGHLY, PIN-712311, WEST
+                BENGAL, INDIA
               </p>
               <p>
-                <span className="font-semibold">Phone :</span> (xxx) xxxx-xxxx
+                <span className="font-semibold">Phone :</span> +91 98312 28624
               </p>
-              <p>
+              {/* <p>
                 <span className="font-semibold">Fax :</span> (033) xxxx-xxxx
               </p>
 
               <p className="flex items-center gap-2">
                 <span className="text-green-600">🟢</span>
                 +91 xxxxxxxxxx
-              </p>
+              </p> */}
 
               <p>
                 <span className="font-semibold">Office Email :</span>{" "}
-                xxxxxxxx@gmail.com
+                hello@bjpchanditala.com
               </p>
               <p>
                 <span className="font-semibold">Election Office Email :</span>{" "}
@@ -405,49 +444,49 @@ export default function HomePage() {
 
             <div className="flex gap-2 mb-4 justify-center">
               {/* Facebook */}
-              <a
-                href="https://facebook.com"
+              <Link
+                href="https://www.facebook.com/debasish.mukherjee.7773/"
                 target="_blank"
                 className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#1877F2] hover:text-white transition"
               >
                 <FaFacebookF size={14} />
-              </a>
+              </Link>
 
               {/* Twitter */}
-              <a
-                href="https://twitter.com"
+              <Link
+                href="https://x.com/debasishvc"
                 target="_blank"
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#1DA1F2] hover:text-white transition"
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-black hover:text-white transition"
               >
-                <FaTwitter size={14} />
-              </a>
+                <FaX size={14} />
+              </Link>
 
               {/* YouTube */}
-              <a
-                href="https://youtube.com"
+              <Link
+                href="https://www.youtube.com/@debasishmukherjee9365"
                 target="_blank"
                 className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#FF0000] hover:text-white transition"
               >
                 <FaYoutube size={14} />
-              </a>
+              </Link>
 
               {/* Google */}
-              <a
+              {/* <Link
                 href="https://google.com"
                 target="_blank"
                 className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-[#DB4437] hover:text-white transition"
               >
                 <FaGoogle size={14} />
-              </a>
+              </Link> */}
 
               {/* Instagram */}
-              <a
-                href="https://instagram.com"
+              <Link
+                href="https://www.instagram.com/debasishvc/"
                 target="_blank"
                 className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-300 hover:bg-gradient-to-r hover:from-pink-500 hover:to-yellow-500 hover:text-white transition"
               >
                 <FaInstagram size={14} />
-              </a>
+              </Link>
             </div>
 
             <p className="text-xs text-gray-600 text-center">
@@ -457,7 +496,7 @@ export default function HomePage() {
         </div>
       </footer>
       <Link
-        href="https://facebook.com"
+        href="https://www.facebook.com/debasish.mukherjee.7773/"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 z-50"
